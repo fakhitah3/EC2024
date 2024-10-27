@@ -1,5 +1,7 @@
 import streamlit as st
 import random
+import time
+
 st.set_page_config(
     page_title="Genetic Algorithm"
 )
@@ -23,6 +25,7 @@ TARGET = st.text_input("Enter your name")
 GENES = ' abcdefghijklmnopqrstuvwxyz'
 
 output_placeholder = st.empty()
+
 #initialization
 def initialize_pop(TARGET):
   population = list()
@@ -128,6 +131,9 @@ def main(POP_SIZE, MUT_RATE, TARGET, GENES, output_placeholder):
           break
       output_placeholder.write('String: ' + str(population[0][0]) + ' Generation: ' + str(generation) + ' Fitness: ' + str(population[0][1]))
       generation+=1
+    time.sleep(0.1)
+
+
 
 
 def click_button():
