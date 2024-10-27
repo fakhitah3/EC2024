@@ -1,12 +1,20 @@
 import streamlit as st
-
+import random
 st.set_page_config(
     page_title="Genetic Algorithm"
 )
 
 st.header("Genetic Algorithm", divider="gray")
 
-import random
+if 'button' not in st.session_state:
+    st.session_state.button = False
+
+def click_button():
+    main(POP_SIZE, MUT_RATE, TARGET, GENES)
+    st.session_state.button = not st.session_state.button
+
+st.button('Calculate', on_click=click_button)
+st.divider()
 
 #POP_SIZE: Number of Chromosomes in our list.
 POP_SIZE = 500
@@ -132,14 +140,6 @@ def main(POP_SIZE, MUT_RATE, TARGET, GENES):
       generation+=1
 
 
-if 'button' not in st.session_state:
-    st.session_state.button = False
 
-def click_button():
-    main(POP_SIZE, MUT_RATE, TARGET, GENES)
-    st.session_state.button = not st.session_state.button
-
-st.button('Calculate', on_click=click_button)
-st.divider()
 
 
