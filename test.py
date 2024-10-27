@@ -6,15 +6,7 @@ st.set_page_config(
 
 st.header("Genetic Algorithm", divider="gray")
 
-if 'button' not in st.session_state:
-    st.session_state.button = False
 
-def click_button():
-    main(POP_SIZE, MUT_RATE, TARGET, GENES)
-    st.session_state.button = not st.session_state.button
-
-st.button('Calculate', on_click=click_button)
-st.divider()
 
 #POP_SIZE: Number of Chromosomes in our list.
 POP_SIZE = 500
@@ -32,6 +24,15 @@ TARGET = st.text_input("Enter your name")
 #GENES: Options from which our population would be created.
 GENES = ' abcdefghijklmnopqrstuvwxyz'
 
+if 'button' not in st.session_state:
+    st.session_state.button = False
+
+def click_button():
+    main(POP_SIZE, MUT_RATE, TARGET, GENES)
+    st.session_state.button = not st.session_state.button
+
+st.button('Calculate', on_click=click_button)
+st.divider()
 
 #initialization
 def initialize_pop(TARGET):
