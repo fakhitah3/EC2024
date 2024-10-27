@@ -87,7 +87,7 @@ def replace(new_gen, population):
 
 #main
 
-def main(POP_SIZE, MUT_RATE, TARGET, GENES):
+def main(POP_SIZE, MUT_RATE, TARGET, GENES, output_placeholder):
     # 1) initialize population
     initial_population = initialize_pop(TARGET)
     found = False
