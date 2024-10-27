@@ -73,7 +73,7 @@ def mutate(offspring, MUT_RATE):
         for i in range(len(arr)):
             if random.random() < MUT_RATE:
                 arr[i] = random.choice(GENES)
-            mutated_offspring.append(arr)
+        mutated_offspring.append(arr)
     return mutated_offspring
 
 #replacement
