@@ -126,17 +126,11 @@ def main(POP_SIZE, MUT_RATE, TARGET, GENES, output_placeholder):
 
       
       if (population[0][1] == 0):
-          with st.empty():
-              output_placeholder.write(':blue[Target found]')
-              output_placeholder.write('String: ' + str(population[0][0]) + ' Generation: ' + str(generation) + ' Fitness: ' + str(population[0][1]))
-              found = True
-              break
+          output_placeholder.write(':blue[Target found]')
           output_placeholder.write('String: ' + str(population[0][0]) + ' Generation: ' + str(generation) + ' Fitness: ' + str(population[0][1]))
-          generation+=1
-          time.sleep(1)
-
-
-
+          break
+        output_placeholder.write('String: ' + str(population[0][0]) + ' Generation: ' + str(generation) + ' Fitness: ' + str(population[0][1]))
+        generation+=1
 
 def click_button():
     main(POP_SIZE, MUT_RATE, TARGET, GENES, output_placeholder)
