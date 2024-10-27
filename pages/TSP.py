@@ -1,5 +1,5 @@
 import streamlit as st
-import matplotlib
+import matplotlib.pyplot as plt
 from itertools import permutations, combinations
 from random import shuffle
 import random
