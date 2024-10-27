@@ -17,15 +17,6 @@ POP_SIZE = 500
 
 #TARGET: Our goal.
 #TARGET = 'fakhitah'
-
-with st.form("my_form"):
-    TARGET = st.text_input("Enter your name")
-    MUT_RATE = st.number_input("Enter your mutation rate")
-
-    calculate = st.form_submit_button("Calculate")
-
-    if calculate:
-        main(POP_SIZE, MUT_RATE, TARGET, GENES, output_placeholder)
     
 
 #GENES: Options from which our population would be created.
@@ -136,7 +127,14 @@ def main(POP_SIZE, MUT_RATE, TARGET, GENES, output_placeholder):
         output_placeholder.write('String: ' + str(population[0][0]) + ' Generation: ' + str(generation) + ' Fitness: ' + str(population[0][1]))
         generation+=1
         
+with st.form("my_form"):
+    TARGET = st.text_input("Enter your name")
+    MUT_RATE = st.number_input("Enter your mutation rate")
 
+    calculate = st.form_submit_button("Calculate")
+
+    if calculate:
+        main(POP_SIZE, MUT_RATE, TARGET, GENES, output_placeholder)
 
 
 
