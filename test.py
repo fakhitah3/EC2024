@@ -14,12 +14,19 @@ POP_SIZE = 500
 
 #MUT_RATE: Rate at which our string will be changed.
 #MUT_RATE = 0.2
-MUT_RATE = st.number_input("Enter your mutation rate")
 
 #TARGET: Our goal.
 #TARGET = 'fakhitah'
-TARGET = st.text_input("Enter your name")
 
+with st.form("my_form"):
+    TARGET = st.text_input("Enter your name")
+    MUT_RATE = st.number_input("Enter your mutation rate")
+
+    calculate = st.form_submit_button("Calculate")
+
+    if calculate:
+        main(POP_SIZE, MUT_RATE, TARGET, GENES, output_placeholder)
+    
 
 #GENES: Options from which our population would be created.
 GENES = ' abcdefghijklmnopqrstuvwxyz'
@@ -126,18 +133,9 @@ def main(POP_SIZE, MUT_RATE, TARGET, GENES, output_placeholder):
             output_placeholder.write(':blue[Target found]')
             output_placeholder.write('String: ' + str(population[0][0]) + ' Generation: ' + str(generation) + ' Fitness: ' + str(population[0][1]))
             break
-        population = replace(new_gen, population)output_placeholder.write('String: ' + str(population[0][0]) + ' Generation: ' + str(generation) + ' Fitness: ' + str(population[0][1]))
+        output_placeholder.write('String: ' + str(population[0][0]) + ' Generation: ' + str(generation) + ' Fitness: ' + str(population[0][1]))
         generation+=1
         
-def click_button():
-    main(POP_SIZE, MUT_RATE, TARGET, GENES, output_placeholder)
-    st.session_state.button = not st.session_state.button
-
-st.button('Calculate', on_click=click_button)
-st.divider()
-
-if 'button' not in st.session_state:
-    st.session_state.button = False
 
 
 
