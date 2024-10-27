@@ -9,10 +9,12 @@ st.header("Genetic Algorithm", divider="gray")
 import random
 
 #POP_SIZE: Number of Chromosomes in our list.
-POP_SIZE = 500
+#POP_SIZE = 500
+POP_SIZE = st.text_input("Enter population size")
 
 #MUT_RATE: Rate at which our string will be changed.
-MUT_RATE = 0.2
+#MUT_RATE = 0.2
+MUT_RATE = st.text_input("Enter your mutation rate")
 
 #TARGET: Our goal.
 #TARGET = 'fakhitah'
@@ -129,5 +131,5 @@ def main(POP_SIZE, MUT_RATE, TARGET, GENES):
       st.write('String: ' + str(population[0][0]) + ' Generation: ' + str(generation) + ' Fitness: ' + str(population[0][1]))
       generation+=1
 
-if (TARGET != null):
-    main(POP_SIZE, MUT_RATE, TARGET, GENES)
+
+main(POP_SIZE, MUT_RATE, TARGET, GENES)
