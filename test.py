@@ -136,8 +136,8 @@ if 'button' not in st.session_state:
     st.session_state.button = False
 
 def click_button():
-    st.session_state.button = not st.session_state.button
     main(POP_SIZE, MUT_RATE, TARGET, GENES)
+    st.session_state.button = not st.session_state.button
 
 st.button('Calculate', on_click=click_button)
 st.divider()
