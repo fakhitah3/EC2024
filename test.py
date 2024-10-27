@@ -105,30 +105,30 @@ def main(POP_SIZE, MUT_RATE, TARGET, GENES, output_placeholder):
     # 3) now we loop until TARGET is found
     while not found:
 
-    # 3.1) select best people from current population
-    selected = selection(population, TARGET)
+        # 3.1) select best people from current population
+        selected = selection(population, TARGET)
 
-    # 3.2) mate parents to make new generation
-    population = sorted(population, key= lambda x:x[1])
-    crossovered = crossover(selected, len(TARGET), population)
-            
-    # 3.3) mutating the children to diversify the new generation
-    mutated = mutate(crossovered, MUT_RATE)
-
-    new_gen = []
-    for _ in mutated:
-        new_gen.append(fitness_cal(TARGET, _))
-
-    # 3.4) replacement of bad population with new generation
-    # we sort here first to compare the least fit population with the most fit new_gen
-
-    population = replace(new_gen, population)output_placeholder.write('String: ' + str(population[0][0]) + ' Generation: ' + str(generation) + ' Fitness: ' + str(population[0][1]))
-    generation+=1
-
-    if (population[0][1] == 0):
-        output_placeholder.write(':blue[Target found]')
-        output_placeholder.write('String: ' + str(population[0][0]) + ' Generation: ' + str(generation) + ' Fitness: ' + str(population[0][1]))
-        break
+        # 3.2) mate parents to make new generation
+        population = sorted(population, key= lambda x:x[1])
+        crossovered = crossover(selected, len(TARGET), population)
+                
+        # 3.3) mutating the children to diversify the new generation
+        mutated = mutate(crossovered, MUT_RATE)
+    
+        new_gen = []
+        for _ in mutated:
+            new_gen.append(fitness_cal(TARGET, _))
+    
+        # 3.4) replacement of bad population with new generation
+        # we sort here first to compare the least fit population with the most fit new_gen
+    
+        population = replace(new_gen, population)output_placeholder.write('String: ' + str(population[0][0]) + ' Generation: ' + str(generation) + ' Fitness: ' + str(population[0][1]))
+        generation+=1
+    
+        if (population[0][1] == 0):
+            output_placeholder.write(':blue[Target found]')
+            output_placeholder.write('String: ' + str(population[0][0]) + ' Generation: ' + str(generation) + ' Fitness: ' + str(population[0][1]))
+            break
         
 def click_button():
     main(POP_SIZE, MUT_RATE, TARGET, GENES, output_placeholder)
