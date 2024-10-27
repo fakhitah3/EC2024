@@ -122,13 +122,12 @@ def main(POP_SIZE, MUT_RATE, TARGET, GENES, output_placeholder):
         # 3.4) replacement of bad population with new generation
         # we sort here first to compare the least fit population with the most fit new_gen
     
-        population = replace(new_gen, population)output_placeholder.write('String: ' + str(population[0][0]) + ' Generation: ' + str(generation) + ' Fitness: ' + str(population[0][1]))
-        generation+=1
-    
         if (population[0][1] == 0):
             output_placeholder.write(':blue[Target found]')
             output_placeholder.write('String: ' + str(population[0][0]) + ' Generation: ' + str(generation) + ' Fitness: ' + str(population[0][1]))
             break
+        population = replace(new_gen, population)output_placeholder.write('String: ' + str(population[0][0]) + ' Generation: ' + str(generation) + ' Fitness: ' + str(population[0][1]))
+        generation+=1
         
 def click_button():
     main(POP_SIZE, MUT_RATE, TARGET, GENES, output_placeholder)
