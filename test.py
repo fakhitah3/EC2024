@@ -121,10 +121,10 @@ def main(POP_SIZE, MUT_RATE, TARGET, GENES):
 
       
       if (population[0][1] == 0):
-        print('Target found')
-        print('String: ' + str(population[0][0]) + ' Generation: ' + str(generation) + ' Fitness: ' + str(population[0][1]))
+        st.write('Target found')
+        st.write('String: ' + str(population[0][0]) + ' Generation: ' + str(generation) + ' Fitness: ' + str(population[0][1]))
         break
-      print('String: ' + str(population[0][0]) + ' Generation: ' + str(generation) + ' Fitness: ' + str(population[0][1]))
+      st.write('String: ' + str(population[0][0]) + ' Generation: ' + str(generation) + ' Fitness: ' + str(population[0][1]))
       generation+=1
 
-st.write(main(POP_SIZE, MUT_RATE, TARGET, GENES))
+main(POP_SIZE, MUT_RATE, TARGET, GENES)
