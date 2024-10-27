@@ -22,17 +22,6 @@ TARGET = st.text_input("Enter your name")
 #GENES: Options from which our population would be created.
 GENES = ' abcdefghijklmnopqrstuvwxyz'
 
-if 'button' not in st.session_state:
-    st.session_state.button = False
-
-c = st.container()
-def click_button():
-    c.write(main(POP_SIZE, MUT_RATE, TARGET, GENES))
-    st.session_state.button = not st.session_state.button
-
-st.button('Calculate', on_click=click_button)
-st.divider()
-
 #initialization
 def initialize_pop(TARGET):
   population = list()
@@ -139,6 +128,21 @@ def main(POP_SIZE, MUT_RATE, TARGET, GENES):
       st.write('String: ' + str(population[0][0]) + ' Generation: ' + str(generation) + ' Fitness: ' + str(population[0][1]))
       generation+=1
 
+
+def click_button():
+    result = main(POP_SIZE, MUT_RATE, TARGET, GENES))
+    st.session_state.button = not st.session_state.button
+    st.session_state.result = result
+
+st.button('Calculate', on_click=click_button)
+st.divider()
+
+if 'button' not in st.session_state:
+    st.session_state.button = False
+
+# Placeholder for the result text (below the button)
+if 'result' in st.session_state:
+    st.write(st.session_state.result)
 
 
 
