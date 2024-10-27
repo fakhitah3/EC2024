@@ -130,7 +130,7 @@ def main(POP_SIZE, MUT_RATE, TARGET, GENES):
 
 
 def click_button():
-    result = main(POP_SIZE, MUT_RATE, TARGET, GENES))
+    result = main(POP_SIZE, MUT_RATE, TARGET, GENES)
     st.session_state.button = not st.session_state.button
     st.session_state.result = result
 
