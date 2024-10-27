@@ -22,8 +22,6 @@ POP_SIZE = 500
 #GENES: Options from which our population would be created.
 GENES = ' abcdefghijklmnopqrstuvwxyz'
 
-output_placeholder = st.empty()
-
 #initialization
 def initialize_pop(TARGET):
     population = list()
@@ -88,7 +86,7 @@ def replace(new_gen, population):
 
 #main
 
-def main(POP_SIZE, MUT_RATE, TARGET, GENES, output_placeholder):
+def main(POP_SIZE, MUT_RATE, TARGET, GENES):
     # 1) initialize population
     initial_population = initialize_pop(TARGET)
     found = False
@@ -121,10 +119,10 @@ def main(POP_SIZE, MUT_RATE, TARGET, GENES, output_placeholder):
         # we sort here first to compare the least fit population with the most fit new_gen
     
         if (population[0][1] == 0):
-            output_placeholder.write(':blue[Target found]')
-            output_placeholder.write('String: ' + str(population[0][0]) + ' Generation: ' + str(generation) + ' Fitness: ' + str(population[0][1]))
+            st.write(':blue[Target found]')
+            st.write('String: ' + str(population[0][0]) + ' Generation: ' + str(generation) + ' Fitness: ' + str(population[0][1]))
             break
-        output_placeholder.write('String: ' + str(population[0][0]) + ' Generation: ' + str(generation) + ' Fitness: ' + str(population[0][1]))
+        st.write('String: ' + str(population[0][0]) + ' Generation: ' + str(generation) + ' Fitness: ' + str(population[0][1]))
         generation+=1
         
 with st.form("my_form"):
@@ -134,7 +132,7 @@ with st.form("my_form"):
     calculate = st.form_submit_button("Calculate")
 
     if calculate:
-        main(POP_SIZE, MUT_RATE, TARGET, GENES, output_placeholder)
+        main(POP_SIZE, MUT_RATE, TARGET, GENES)
 
 
 
