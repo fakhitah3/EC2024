@@ -128,6 +128,7 @@ def main(POP_SIZE, MUT_RATE, TARGET, GENES, output_placeholder):
       if (population[0][1] == 0):
           output_placeholder.write(':blue[Target found]')
           output_placeholder.write('String: ' + str(population[0][0]) + ' Generation: ' + str(generation) + ' Fitness: ' + str(population[0][1]))
+          found = True
           break
       output_placeholder.write('String: ' + str(population[0][0]) + ' Generation: ' + str(generation) + ' Fitness: ' + str(population[0][1]))
       generation+=1
