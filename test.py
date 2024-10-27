@@ -131,7 +131,6 @@ def main(POP_SIZE, MUT_RATE, TARGET, GENES):
       st.write('String: ' + str(population[0][0]) + ' Generation: ' + str(generation) + ' Fitness: ' + str(population[0][1]))
       generation+=1
 
-st.button('Calculate', on_click=click_button)
 
 if 'button' not in st.session_state:
     st.session_state.button = False
@@ -139,5 +138,7 @@ if 'button' not in st.session_state:
 def click_button():
     st.session_state.button = not st.session_state.button
     main(POP_SIZE, MUT_RATE, TARGET, GENES)
+
+st.button('Calculate', on_click=click_button)
 
 
