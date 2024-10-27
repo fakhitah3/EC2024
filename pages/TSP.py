@@ -328,4 +328,4 @@ for i, txt in enumerate(shortest_path):
     ax.annotate(str(i+1)+ "- " + txt, (x_shortest[i], y_shortest[i]), fontsize= 20)
 
 fig.set_size_inches(16, 12)  
-st.pyplot()
+st.pyplot(fig)
