@@ -13,7 +13,7 @@ st.title("City Coordinates Input")
 
 
 cities_names = []
-x = []
+x_coords = []
 y_coords = []
 
 
@@ -30,7 +30,7 @@ with st.form("city_form"):
             y = st.number_input(f"y-coordinate (City {i+1})", min_value=1, max_value=10, key=f"y_{i}")
         
         if city:
-            cities.append(city)
+            cities_name.append(city)
             x_coords.append(x)
             y_coords.append(y)
     
@@ -38,12 +38,14 @@ with st.form("city_form"):
 
 if submitted:
     st.write("City Coordinates Entered:")
-    for i, city in enumerate(cities):
-        st.write(f"{city}: (x: {x_coords[i]}, y: {y_coords[i]})")
+    for i, city in enumerate(cities_name):
+        st.write(f"{cities_name}: (x: {x_coords[i]}, y: {y_coords[i]})")
 
 
 #x = [0,3,6,7,15,10,16,5,8,1.5]
 #y = [1,2,1,4.5,-1,2.5,11,6,9,12]
+x = x_coords
+y = y_coords
 #cities_names = ["Gliwice", "Cairo", "Rome", "Krakow", "Paris", "Alexandria", "Berlin", "Tokyo", "Rio", "Budapest"]
 city_coords = dict(zip(cities_names, zip(x, y)))
 n_population = 250
