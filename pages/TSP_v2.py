@@ -40,15 +40,15 @@ with st.form("city_form"):
 x = x_coords
 y = y_coords
 #cities_names = ["Gliwice", "Cairo", "Rome", "Krakow", "Paris", "Alexandria", "Berlin", "Tokyo", "Rio", "Budapest"]
-cities_name = cities
-city_coords = dict(zip(cities, zip(x, y)))
+cities_names = cities
+city_coords = dict(zip(cities_names, zip(x, y)))
 n_population = 250
 crossover_per = 0.8
 mutation_per = 0.2
 n_generations = 200
 
 # Pastel Pallete
-colors = sns.color_palette("pastel", len(cities))
+colors = sns.color_palette("pastel", len(cities_names))
 
 # City Icons
 city_icons = {
