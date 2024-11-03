@@ -27,7 +27,7 @@ with st.form("city_form"):
         with col3:
             y = st.number_input(f"y-coordinate (City {i+1})", min_value=1, max_value=10, key=f"y_{i}")
         
-        if city:
+        if loc:
             cities.append(loc)
             x_coords.append(x)
             y_coords.append(y)
