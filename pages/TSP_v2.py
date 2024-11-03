@@ -9,17 +9,42 @@ import pandas as pd
 import seaborn as sns
 import re
 
-collect_numbers = lambda x : [int(i) for i in re.split("[^0-9]", x) if i != ""]
+st.title("City Coordinates Input")
 
-numbers = st.text_input("PLease enter numbers")
-st.write(collect_numbers(numbers))
 
-fixed_numbers = st.multiselect("Please select numbers", [1, 2, 3, 4, 5])
-st.write(fixed_numbers)
+cities_names = []
+x = []
+y_coords = []
 
-x = [0,3,6,7,15,10,16,5,8,1.5]
-y = [1,2,1,4.5,-1,2.5,11,6,9,12]
-cities_names = ["Gliwice", "Cairo", "Rome", "Krakow", "Paris", "Alexandria", "Berlin", "Tokyo", "Rio", "Budapest"]
+
+with st.form("city_form"):
+    st.write("Enter up to 10 cities with their coordinates (x, y) in range 1-10.")
+
+    for i in range(10):
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            city = st.text_input(f"City {i+1}", key=f"city_{i}")
+        with col2:
+            x = st.number_input(f"x-coordinate (City {i+1})", min_value=1, max_value=10, key=f"x_{i}")
+        with col3:
+            y = st.number_input(f"y-coordinate (City {i+1})", min_value=1, max_value=10, key=f"y_{i}")
+        
+        if city:
+            cities.append(city)
+            x_coords.append(x)
+            y_coords.append(y)
+    
+    submitted = st.form_submit_button("Submit")
+
+if submitted:
+    st.write("City Coordinates Entered:")
+    for i, city in enumerate(cities):
+        st.write(f"{city}: (x: {x_coords[i]}, y: {y_coords[i]})")t.write(collect_numbers(numbers))
+
+
+#x = [0,3,6,7,15,10,16,5,8,1.5]
+#y = [1,2,1,4.5,-1,2.5,11,6,9,12]
+#cities_names = ["Gliwice", "Cairo", "Rome", "Krakow", "Paris", "Alexandria", "Berlin", "Tokyo", "Rio", "Budapest"]
 city_coords = dict(zip(cities_names, zip(x, y)))
 n_population = 250
 crossover_per = 0.8
