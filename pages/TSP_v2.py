@@ -21,14 +21,14 @@ with st.form("city_form"):
     for i in range(10):
         col1, col2, col3 = st.columns(3)
         with col1:
-            city = st.text_input(f"City {i+1}", key=f"city_{i}")
+            loc = st.text_input(f"City {i+1}", key=f"loc_{i}")
         with col2:
             x = st.number_input(f"x-coordinate (City {i+1})", min_value=1, max_value=10, key=f"x_{i}")
         with col3:
             y = st.number_input(f"y-coordinate (City {i+1})", min_value=1, max_value=10, key=f"y_{i}")
         
         if city:
-            cities.append(city)
+            cities.append(loc)
             x_coords.append(x)
             y_coords.append(y)
     
@@ -36,7 +36,7 @@ with st.form("city_form"):
 
 if submitted:
     st.write("City Coordinates Entered:")
-    for i, city in enumerate(cities):
+    for i, loc in enumerate(cities):
         st.write(f"{cities[i]}: (x: {x_coords[i]}, y: {y_coords[i]})")
 
 
