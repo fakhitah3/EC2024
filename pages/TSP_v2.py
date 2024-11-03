@@ -14,7 +14,7 @@ st.title("City Coordinates Input")
 
 with st.form("city_form"):
     st.write("Enter up to 10 cities with their coordinates (x, y) in range 1-10.") 
-    cities_names = []
+    cities = []
     x_coords = []
     y_coords = [] 
     
@@ -28,7 +28,7 @@ with st.form("city_form"):
             y = st.number_input(f"y-coordinate (City {i+1})", min_value=1, max_value=10, key=f"y_{i}")
         
         if city:
-            cities_name.append(city)
+            cities.append(city)
             x_coords.append(x)
             y_coords.append(y)
     
@@ -36,8 +36,8 @@ with st.form("city_form"):
 
 if submitted:
     st.write("City Coordinates Entered:")
-    for i, city in enumerate(cities_name):
-        st.write(f"{cities_name}: (x: {x_coords[i]}, y: {y_coords[i]})")
+    for i, city in enumerate(cities):
+        st.write(f"{cities}: (x: {x_coords[i]}, y: {y_coords[i]})")
 
 
 #x = [0,3,6,7,15,10,16,5,8,1.5]
