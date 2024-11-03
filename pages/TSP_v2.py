@@ -18,7 +18,7 @@ with st.form("city_form"):
     x_coords = []
     y_coords = [] 
     
-    for i in range(10):
+    for i in range(4):
         col1, col2, col3 = st.columns(3)
         with col1:
             loc = st.text_input(f"City {i+1}", key=f"loc_{i}")
