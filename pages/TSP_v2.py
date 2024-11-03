@@ -52,10 +52,10 @@ colors = sns.color_palette("pastel", len(cities_names))
 
 # City Icons
 city_icons = {
-    cities_name[0]: "♕",
-    cities_name[1]: "♖",
-    cities_name[2]: "♗",
-    cities_name[3]: "♘",
+    cities_names[0]: "♕",
+    cities_names[1]: "♖",
+    cities_names[2]: "♗",
+    cities_names[3]: "♘",
     "Paris": "♙",
     "Alexandria": "♔",
     "Berlin": "♚",
