@@ -39,7 +39,7 @@ with st.form("city_form"):
 if submitted:
     st.write("City Coordinates Entered:")
     for i, city in enumerate(cities):
-        st.write(f"{city}: (x: {x_coords[i]}, y: {y_coords[i]})")t.write(collect_numbers(numbers))
+        st.write(f"{city}: (x: {x_coords[i]}, y: {y_coords[i]})")
 
 
 #x = [0,3,6,7,15,10,16,5,8,1.5]
