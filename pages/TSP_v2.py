@@ -45,6 +45,7 @@ if submitted:
 x = x_coords
 y = y_coords
 #cities_names = ["Gliwice", "Cairo", "Rome", "Krakow", "Paris", "Alexandria", "Berlin", "Tokyo", "Rio", "Budapest"]
+cities_name = cities
 city_coords = dict(zip(cities_names, zip(x, y)))
 n_population = 250
 crossover_per = 0.8
@@ -56,10 +57,10 @@ colors = sns.color_palette("pastel", len(cities_names))
 
 # City Icons
 city_icons = {
-    "Gliwice": "♕",
-    "Cairo": "♖",
-    "Rome": "♗",
-    "Krakow": "♘",
+    cities_name[0]: "♕",
+    cities_name[1]: "♖",
+    cities_name[2]: "♗",
+    cities_name[3]: "♘",
     "Paris": "♙",
     "Alexandria": "♔",
     "Berlin": "♚",
