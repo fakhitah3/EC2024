@@ -12,14 +12,12 @@ import re
 st.title("City Coordinates Input")
 
 
-cities_names = []
-x_coords = []
-y_coords = []
-
-
 with st.form("city_form"):
-    st.write("Enter up to 10 cities with their coordinates (x, y) in range 1-10.")
-
+    st.write("Enter up to 10 cities with their coordinates (x, y) in range 1-10.") 
+    cities_names = []
+    x_coords = []
+    y_coords = [] 
+    
     for i in range(10):
         col1, col2, col3 = st.columns(3)
         with col1:
