@@ -18,7 +18,7 @@ with st.form("city_form"):
     x_coords = []
     y_coords = [] 
     
-    for i in range(4):
+    for i in range(10):
         col1, col2, col3 = st.columns(3)
         with col1:
             loc = st.text_input(f"City {i+1}", key=f"loc_{i}")
@@ -56,12 +56,12 @@ city_icons = {
     cities_names[1]: "♖",
     cities_names[2]: "♗",
     cities_names[3]: "♘",
-    "Paris": "♙",
-    "Alexandria": "♔",
-    "Berlin": "♚",
-    "Tokyo": "♛",
-    "Rio": "♜",
-    "Budapest": "♝"
+    cities_names[4]: "♙",
+    cities_names[5]: "♔",
+    cities_names[6]: "♚",
+    cities_names[7]: "♛",
+    cities_names[8]: "♜",
+    cities_names[9]: "♝"
 }
 
 fig, ax = plt.subplots()
