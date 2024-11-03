@@ -34,11 +34,6 @@ with st.form("city_form"):
     
     submitted = st.form_submit_button("Submit")
 
-if submitted:
-    st.write("City Coordinates Entered:")
-    for i, loc in enumerate(cities):
-        st.write(f"{cities[i]}: (x: {x_coords[i]}, y: {y_coords[i]})")
-
 
 #x = [0,3,6,7,15,10,16,5,8,1.5]
 #y = [1,2,1,4.5,-1,2.5,11,6,9,12]
